@@ -1,5 +1,5 @@
 
-define(function() {
+define(['underscore', 'backbone'], function(_, Backbone) {
   'use strict';
   var desc, mediator;
   mediator = {};

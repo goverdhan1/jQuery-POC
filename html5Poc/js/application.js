@@ -1,5 +1,5 @@
 
-define(['mediator', 'controllers/application_controller'], function(mediator, ApplicationController) {
+define(['mediator', 'controllers/mainController'], function(mediator, MainController) {
   'use strict';
   var Application;
   Application = {
@@ -7,7 +7,7 @@ define(['mediator', 'controllers/application_controller'], function(mediator, Ap
       return this.initControllers();
     },
     initControllers: function() {      
-      return new ApplicationController();
+      return new MainController();
     }
   };
   Application.initialize();

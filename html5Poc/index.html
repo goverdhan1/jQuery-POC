@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>P Center</title>
+<link rel="stylesheet" href="css/main.css">
+<!--[if lt IE 9]>
+<script>
+'abbr article aside audio canvas details figcaption figure footer header hgroup mark meter nav output progress section summary time video'.replace(/\w+/g,function(n){document.createElement(n)})
+</script>
+<![endif]-->
+<script>
+document.documentElement.className += 'js';
+</script>
+</head>
+<body>
+
+<h1>P Center</h1>
+
+<p id="startup-loading">Loading…</p>
+
+<div id="treeview-container">
+</div>
+
+<div id="content-container">	
+</div>
+
+<!--
+This is a simple solution. We use the non-AMD versions of the core libraries
+because nearly every module uses these libraries. For this demo, it's okay
+that they create global objects (jQuery, $, _, Backbone, Handlebars etc.).
+-->
+<script src="js/plugins/jquery.min.js"></script>
+<script src="js/plugins/handlebars.js"></script>
+<script src="js/plugins/require.min.js"></script>
+<script>
+require.config({
+    baseUrl: 'js/',
+    paths: {
+      underscore: 'plugins/underscore.min',
+      backbone: 'plugins/backbone.min',
+      text: 'plugins/require.text.min',
+      jqueryui: 'plugins/jquery.ui.min',
+      uimultiselect: 'plugins/ui.multiselect',
+      jqGridLocale: 'plugins/grid.locale.en',
+      jqGrid: 'plugins/jquery.jqGrid.min',
+      jsTree: 'plugins/jquery.jstree'
+    },
+    waitSeconds: 1,
+    // For easier development, disable browser caching:
+    urlArgs: 'bust=' +  (new Date()).getTime()
+});
+require(['application']);
+</script>
+
+</body>
+</html>
